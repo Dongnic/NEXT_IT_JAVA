@@ -40,7 +40,7 @@ public class Variable_Name {
 	// 상수명 짓기
 	// 단어 전부 대문자를 사용한다.
 	// 단어 사이에 언더바(_) 표기
-	final String NEXT_IT_ADDRESS = "대전 희영빌딩 2층";
+	final String NEXT_IT_ADDRESS = "비밀";
 	
 	
 	
