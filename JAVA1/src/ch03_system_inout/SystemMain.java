@@ -70,6 +70,8 @@ public class SystemMain {
 		System.out.println("모드: " + airconMode);
 		// 스캐너 통로 닫음. (안 닫아도 큰 문제는 없음.)
 		sc.close();
+		
+		
 	}
 
 }
