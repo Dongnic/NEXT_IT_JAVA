@@ -1,6 +1,6 @@
 package ch02_variable;
 
-public class Variable_main {
+public class Variable_Main {
 
 	public static void main(String[] args) {
 		// 변수의 선언 

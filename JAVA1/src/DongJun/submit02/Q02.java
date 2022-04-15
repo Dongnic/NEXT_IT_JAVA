@@ -11,7 +11,7 @@ public class Q02 {
 			String idBack = "1231476";
 			System.out.println(Integer.parseInt(idBack.substring(0, 1)) % 2 == 0 ? "여" : "남"); 
 			
-			
+			 
 			
 			
 	}

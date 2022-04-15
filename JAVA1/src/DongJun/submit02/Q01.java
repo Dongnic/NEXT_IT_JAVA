@@ -9,7 +9,7 @@ public class Q01 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("이름을 입력해주세요: ");
 		String username = sc.nextLine();
-		
+		 
 		System.out.print("국어 점수를 입력해주세요: ");
 		int scorekorean = Integer.parseInt(sc.nextLine());
 		System.out.print("영어 점수를 입력해주세요: ");

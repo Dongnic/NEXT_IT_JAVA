@@ -1,6 +1,6 @@
 package ch04_operator;
 
-public class OperatorMain {
+public class Operator_Main {
 
 	public static void main(String[] args) {
 
@@ -209,7 +209,6 @@ public class OperatorMain {
 		// ! not(부정) true -> false로 false -> true로
 		boolean checkName1 = !name.isEmpty(); // 비어있지 않으면 true
 		System.out.println(checkName1); // true
-		
 		System.out.println("======= 비트 연산자 ========");
 		// 비트연산자
 		int bitTen = 10;  // 1010
@@ -218,7 +217,7 @@ public class OperatorMain {
 		// & AND
 		System.out.println(bitTen & bitNine); // 둘다 1일경우 1 아니면 0 
 		// 8 -> 1000
-		
+		 
 		// | OR
 		System.out.println(bitTen | bitNine); // 하나라도 1이면 1 전부 아니면 0 
 		// 11 -> 1011

@@ -1,6 +1,6 @@
 package ch02_variable;
 
-public class VariableType {
+public class Variable_Type {
 	// 변수의 타입(기본타입)
 	
 	// 정수 타입 

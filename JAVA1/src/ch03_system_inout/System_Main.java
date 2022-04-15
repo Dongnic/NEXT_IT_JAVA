@@ -2,7 +2,7 @@ package ch03_system_inout;
 
 import java.util.Scanner;
 
-public class SystemMain {
+public class System_Main {
 
 	public static void main(String[] args) {
 		// 자동 줄 맞추기 
