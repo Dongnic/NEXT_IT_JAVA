@@ -1,5 +1,7 @@
 package ch05_control_flow;
 
+import java.util.Scanner;
+
 public class Loopfor {
 
 	public static void main(String[] args) {
@@ -131,7 +133,7 @@ public class Loopfor {
 		
 		// 라면 공장에서 면을 30cm 뽑고 있는데 
 		// 6cm마다 잘라주어야 한다.
-		for(int i = 1; 0 <= 1; i++) {
+		for(int i = 1; i <= 5; i++) {
 			if(i % 2 ==1) {
 				System.out.println("////////");
 			}else {
@@ -141,17 +143,163 @@ public class Loopfor {
 			if(i % 6 == 0) {
 				System.out.println("---------면 뽑는중..");
 			}
-			
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			
+		}	
+//			try {
+//				Thread.sleep(500);
+//				// 현재 코드를 실행중인 스레드를
+//				// 괄호 안 시간 만큼 잠시 멈춤
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+		System.out.println("===================================");
+		
+		 //지금으로부터 100시간 후 몇 일 몇 시가 될까?
+		int currentDay = 18;
+		int currentHour = 9;
+		
+		for(int j = 0; j < 10; j++) {
+			int day = currentDay + (currentHour/24);
+			int hour = currentHour % 24;
+			System.out.println(day + "일 " + hour + "시");
+			currentHour++;
 		}
 		
+		System.out.println("===================================");
 		
 		
-	}
+		//거꾸로 for문
+		//10부터 1까지 출력		
+		for(int i = 10; i > 0; i--) {
+			System.out.println(i);
+		}
+		
+		// 9단부터 2단 거꾸로 출력 
+		int gugudan = 9 ;
+		int guResult = 0;
+		
+		for(; gugudan > 1; gugudan--) {
+			System.out.println("----"+ (gugudan) +"단----");
+			for(int i = 9; i >= 1; i-- ) {
+				guResult = i * gugudan;
+				System.out.println(gugudan + " x " + i + " = " + guResult);
+				} // for2 끝 	
+		} // for1 끝
+		
+		System.out.println("===================================");
+		
+		// for문으로 String 문자열을 가지고 놀기
+		// for문을 이용해서 숫자 문자열의
+		// 각 자리수를 더해서 결과를 출력
+		
+		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.print("숫자를 입력해주세요: ");
+//		String example = sc.nextLine();
+		String example ="1234";
+		int exampleResult = 0;
+		for(int i = 0; i < example.length(); i++) {
+		exampleResult += Integer.parseInt(example.substring(i, i+1));
+		}
+		
+		System.out.println("문자열 합 : " + exampleResult);
+//		sc.close();
+		
+//		System.out.println("===================================");
+//		String s = "슈";
+//		System.out.println("슈"==s);
+		// 슈의 갯수
+		String syusyu = "슈슈슈슛슈슛ㅅ슛ㅅㅅ슛슈슛ㅅ슈슈슈슛";
+//		Scanner sca = new Scanner(System.in);
+//		System.out.print("문자를 입력해주세요: ");
+//		String syusyu = sca.nextLine();		
+
+		int syuCount = 0;
+		for(int i = 0; i < syusyu.length(); i++) {
+			String syustr = syusyu.substring(i, i+1);
+			if(syustr.equals("슈")) {
+				syuCount++;
+			}
+			 
+		} System.out.println("슈가 들어간 문자열 : " + syuCount);
+//		sca.close();
+		
+		// break 문
+		// i가 1부터 10까지 증가하는 for문에서
+		// i가 5보다 커지게 되면 for문을 종료
+		
+		for(int i = 1; i <= 10; i++) {
+			if(i >= 5) {
+				break;
+				// 컴퓨터가 break 명령어를 실행하면
+				// 가까운 반복문(if, for 등) 하나를 즉시 종료한다.
+			}
+			System.out.println(i);
+		}
+		int sum = 0;
+		// 1부터 n까지 더한다고 했을때
+		// 100이상이 되는 n을 구하시오
+		for(int i = 1; i < 99999; i++) {
+			sum += i;
+			if(sum >= 100) {
+				System.out.println("100이상이 되는 n은 "+ i);
+				break;
+			}
+		}
+	
+		System.out.println("======================");
+		
+		// continue문
+		// 구구단 7단을 출력하는데 너무 쉬운 7 x 1, 2, 3, 4는 미출력
+		
+		for(int i = 1; i <= 9; i++) {
+			if(i < 5) {
+				// 실행 시 continue 아래 코드는 무시하고 다시 반복문을 실행
+				continue;
+			}
+			System.out.println("7 x " + i +" = " + 7 * i);
+		}
+		
+		System.out.println("======================");
+		// 이중 for 문
+		// 구구단 출력
+		// 2단부터 9단까지
+		
+		for(int j = 2; j <= 9 ; j++) {
+			System.out.println("----"+ j +"단----");
+			for(int i = 1; i <= 9; i ++ ) {
+				System.out.println(j + " x " + i + " = " + j*i);
+			}
+		}
+		
+		System.out.println("======================");
+		
+		// 트리
+		//     *
+		//    **
+		//   ***
+		//  ****
+		// *****
+		
+		String blank = "";
+		String starTree = "";
+		for(int i = 1; i <= 5; i++) {
+			starTree += "*";
+//			System.out.println(blank.substring(i) + starTree);
+		}
+		
+		// 이중 for문으로 트리 만들기
+		starTree = "";
+		blank = "";
+		for(int i = 1; i <= 5; i++) {
+			starTree += "*";
+			blank = "";
+			for(int j = 5; j >= i; j--) {
+				blank += " ";
+			}System.out.println(blank + starTree);
+		}
+//		
+		
+		
+	}  
 
 }
