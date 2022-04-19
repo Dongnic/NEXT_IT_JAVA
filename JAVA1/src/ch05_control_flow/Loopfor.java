@@ -296,9 +296,7 @@ public class Loopfor {
 			for(int j = 5; j >= i; j--) {
 				blank += " ";
 			}System.out.println(blank + starTree);
-		}
-//		
-		
+		}		
 		
 	}  
 
