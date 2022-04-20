@@ -24,6 +24,7 @@ public class Q01 {
 		}else goods = "";
 		
 		System.out.println("회전 수 : " + rouletteSpin + "\n" +"당첨 : " + goods);
+							
 		
 	}
 

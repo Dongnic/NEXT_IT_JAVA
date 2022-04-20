@@ -7,12 +7,14 @@ public class Q03 {
 		int countWally = 0;
 		for(int i = 0; i < findWally.length(); i += 2) {
 			String syustr = findWally.substring(i, i+2);
+			System.out.println("결과 : " + syustr);
 			if(syustr.equals("월리")) {
 				countWally++;
 			}
 			 
 		} 
 		System.out.println("결과 : " + countWally);
+		System.out.println("결과 : " + findWally.length());
 	
 	}
 

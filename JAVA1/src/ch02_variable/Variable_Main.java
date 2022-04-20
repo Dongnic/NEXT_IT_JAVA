@@ -46,10 +46,16 @@ public class Variable_Main {
 		// 인덱스는 배열, 문자열에서 몇번째에 해당하는 숫자를 의미한다.
 		// 인덱스는 0부터 시작(인덱스 0 = 첫번째)
 		// 해당 문자열에서 인덱스에 해당하는 문자(char)를 리턴한다.
-		
+		System.out.println("--------------------");
 		char alphaP = fruits.charAt(1);
+		String pp = "p";
 		System.out.println(alphaP);
-		
+		boolean a = false;
+		if (fruits.charAt(1) == fruits.charAt(1)) {
+			a = true;
+		}
+		System.out.println(a);
+		System.out.println("--------------------");
 		// .indexOf(문자열)
 		// 해당문자열에서 괄호 안에 있는 문자의 인덱스를 리턴
 		System.out.println(fruits.indexOf("Banana"));
@@ -176,7 +182,9 @@ public class Variable_Main {
 //		String strNumCast = Integer.toString(intNum);
 		String strNumCast = intNum + ""; // 위와 같지만 더 보편적 방법 		
 		System.out.println(strNumCast + 2);
-		
+		int c = -8;
+		String b = c +"";
+		System.out.println(b);
 		// 실수 문자열을 실수로 형 변환
 		strNum = "50.23";
 		double doubleNum = Double.parseDouble(strNum);

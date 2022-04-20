@@ -12,13 +12,13 @@ public class Q02 {
 //		String reverse = "로꾸꺼 로꾸꺼"; // 7
 
 		for(int i = reverse.length()-1; i >= 0; i--) {
-			System.out.print(reverse.substring(reverse.length(), reverse.length()-1));
+			System.out.print(reverse.substring(i, i+1));   // substring 이용
+//			System.out.print(reverse.charAt(i));           // charAt 이용
 
 		} // i = 6부터 for문 7번 실행 
 		  // i는 6부터 0까지 charAt한 것을 출력 
 	
-	
-	
+		sc.close();
 	}
 
 }
