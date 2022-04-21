@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Q02 {
 
 	public static void main(String[] args) {
-
+		
+		System.out.println(9/2);
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("문자를 입력해주세요. ");
 		System.out.print(">>>");

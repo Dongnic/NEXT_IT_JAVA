@@ -227,21 +227,6 @@ public class Operator_Main {
 		// 3 -> 0011 
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }

@@ -183,7 +183,7 @@ public class Variable_Main {
 		String strNumCast = intNum + ""; // 위와 같지만 더 보편적 방법 		
 		System.out.println(strNumCast + 2);
 		int c = -8;
-		String b = c +"";
+		String b = c + "";
 		System.out.println(b);
 		// 실수 문자열을 실수로 형 변환
 		strNum = "50.23";

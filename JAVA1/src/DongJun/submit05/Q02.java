@@ -7,7 +7,10 @@ public class Q02 {
 		int elevatorA = (int) (Math.random() * 10);       // 승강기 A 위치(랜덤)
 		int elevatorB = (int) (Math.random() * 10);	      // 승강기 A 위치(랜덤)
 		int whereI = 0;                                   // 내 위치
-		String aKey = "";                                 // 현재 타고있는 승강기 
+		String aKey = "";                                 // 현재 타고있는 승강기
+//		final int ACTIVE_ELEVATOR_A = 200;                // aKey 형식보다는 상수를 선언하는게 더 좋음
+		final String START_ELEVATOR = "========== 희영빌딩 엘리베이터(-10층 ~ 63층) ==========";
+														  // 출력되는 것도 상수로 선언함 
 		Scanner sc = new Scanner(System.in);
 		outer: while(true) {
 				System.out.println("========== 희영빌딩 엘리베이터(-10층 ~ 63층) ==========");
@@ -25,7 +28,7 @@ public class Q02 {
 				if(button > 63 || button < -10) {
 					System.out.println("희영빌딩 엘리베이터는 -10층 ~ 63층까지만 운영합니다.");		
 				}else {			
-	/* 엘리베이터 층수 차이 계산 */
+	/* 엘리베이터 층수 차이 계산 */ // 삼항연산자 적극사용!!!
 			    int eleA = 0;
 			    int eleB = 0;
 			    if(button >= elevatorA) {
