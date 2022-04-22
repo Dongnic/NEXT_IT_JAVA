@@ -15,8 +15,8 @@ public class Q03 {
 				inputnum = inputnum / 2;
 				}
 			 	if(inputnum == 1) {
-			 		text = (inputnum % 2) + text;
-			 		return text;
+				text = (inputnum % 2) + text;
+		 		return text;
 			 	}		
 		}
 	}
