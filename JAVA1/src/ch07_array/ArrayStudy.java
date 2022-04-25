@@ -1,8 +1,10 @@
 package ch07_array;
 
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Base64.Decoder;
 import java.util.Base64.Encoder;
+import java.util.Collections;
 
 public class ArrayStudy {
 
@@ -213,8 +215,216 @@ public class ArrayStudy {
 		System.out.println(sinSeoyugi2.hashCode()); 
 		System.out.println(sinSeoyugi3.hashCode()); 
 		
+		System.out.println("===============================");
+		
+		// 숫자 배열
+		int[] numArr = {7, 5, 6, 3, 1, 4, 2};
+//		intArray = {1, 2, 3}; // 이미 선언된 intArray는 초기화가 안됨 불편(한 개씩은 가능)
+		printArray(numArr);
+		// 인덱스 0번 값과 인덱스 1번 값의 위치를 바꾸기
+		int temp = numArr[0];
+		numArr[0] = numArr[1];
+		numArr[1] = temp;
+		printArray(numArr);
+		
+		// 인덱스 2번 값과 3번 값의 위치를
+		// 바꾸는데, 추가적인 변수 선언 없이 바꿔보세요
+		// Hint 이건 숫자형 배열에서만 가능한 방법
+		
+		// 213 + 32
+		numArr[2] = numArr[2] + numArr[3]; 
+		// 245 - 32
+		numArr[3] = numArr[2] - numArr[3]; 
+		// 245 - 213
+		numArr[2] = numArr[2] - numArr[3];
+		
+		printArray(numArr);
+		
+		// 정렬
+		// (알고리즘으로 정렬)
+		
+		for(int i = 0; i< numArr.length-1;i++) {
+			if(numArr[i] > numArr[i+1]) {
+				int tem = numArr[i];
+				numArr[i] = numArr[i+1];
+				numArr[i+1] = tem;
+			}
+		}
+		printArray(numArr);
+		System.out.println("=========================");
+		// 버블정렬 오름차순
+		for(int j = 0; j < numArr.length; j++) {
+			for(int i = 0; i< numArr.length-1;i++) {
+				if(numArr[i] > numArr[i+1]) {
+					int tem = numArr[i];
+					numArr[i] = numArr[i+1];
+					numArr[i+1] = tem;
+				}
+			}printArray(numArr);
+		}
+		System.out.println("=========================");
+		// 내림차순 
+		for(int j = 0; j < numArr.length; j++) {
+			for(int i = 0; i< numArr.length-1-j;i++) { // -j는 불필요한 비교 횟수를 줄여준다 
+				if(numArr[i] < numArr[i+1]) {
+					int tem = numArr[i];
+					numArr[i] = numArr[i+1];
+					numArr[i+1] = tem;
+				}
+			}printArray(numArr);
+		}
+		
+		// 오름차순 쉽게하기
+		Arrays.parallelSort(numArr);
+	    printArray(numArr);
+		
+	    // 내림차순 쉽게하기
+//	    Arrays.sort(numArr, Collections.reverseOrder());
+		
+	    // 위 방법은 객체를 담은 배열일 경우에만
+	    // 가능한 방법(기본형인 int 배열이 아닌 참조타입인 Integer 배열은 가능)
+	    Integer[] integerArr = {1, 2, 3, 4, 5, 6};
+	    // 내림차순
+	    Arrays.sort(integerArr, Collections.reverseOrder());
+	    printArray(integerArr);
+	    System.out.println("============오름차순==========");
+	    // 오름차순
+	    Arrays.sort(integerArr);
+	    printArray(integerArr);
+	    // 오름차순을 이용한 내림차순
+	    // 모든배열의 요소에 -1을 연산한 후 오름차순으로 정렬
+	    // 그 후 다시 -1을 연산하여 기존 값으로 
+	    
+	    // 모든 요소에 x -1
+	    for(int i = 0; i< integerArr.length;i++) {
+	    	integerArr[i] = integerArr[i] * -1; 
+	    }
+	    // 오름차순 정렬
+	    Arrays.sort(integerArr);
+	    // 다시 모든 요소에 x -1
+	    for(int i = 0; i< integerArr.length;i++) {
+	    	integerArr[i] = integerArr[i] * -1; 
+	    }
+	    printArray(integerArr);
+		
+	    // 다차원 배열
+	    // 2차원 배열
+	    int[][] doubleArr = {{1, 2, 3}, {4, 5, 6},{7, 8, 9}};
+	    printArray(doubleArr);
+	    
+	    int[] tempArr = doubleArr[0];
+	    printArray(tempArr); // 1, 2, 3
+	    System.out.println(doubleArr[2][1]); // 8
+		
+	    // 3차원 배열
+	    int[][][] tripleArr = {{{1, 2, 3}, {4, 5, 6},{7, 8, 9}}
+	    				     ,{{11, 22, 33}, {44, 55, 66},{77, 88, 99}}
+	    				     ,{{111, 222, 333}, {444, 555, 666},{777, 888, 999}}};
+	    
+	    System.out.println("=========================");
+	    
+	    String[] nameArray = {"한예성", "김달현", "송나겸", "김성윤", "남궁혜연"
+	    		, "오혁진", "최윤정", "박승주", "석승원", "김성빈", "신윤빈", "염현섭"
+	    		, "박기현", "유동준", "이한정", "임동성", "임성헌", "정기준", "박설리"
+	    		, "가나혜", "황의창"};
+	    // for문을 이용해서 "박"씨 성을 가진 동기가 몇 명인지 출력해주세요
+	    int countPark = 0;
+	    for(int i = 0; i < nameArray.length; i++) {
+	    	if(nameArray[i].substring(0, 1).equals("박")) { // 문자열은 equals !!!!, 숫자는 ==
+	    		countPark++;
+	    	}
+	    } 
+	    System.out.println(countPark);	    
+	    
+	    int[] numberArr = {123, 234, 345, 456, 567, 678, 789}; 
+	    
+	    // numberArr 의 최댓값, 최솟값을 출력해주세요.
+	    
+	    int min = numberArr[0];
+	    int max = numberArr[0];
+	    for(int i = 0; i < numberArr.length; i++) {
+	    	if(numberArr[i] > max) {
+	    		max = numberArr[i];
+	    	}
+	    	if(numberArr[i] < min) {
+	    		min = numberArr[i];
+	    	}	
+	    }
+	    System.out.println("최소: " + min + " 최대: " + max);
+	    maxArray(numberArr);
+	    minArray(numberArr);
+	    System.out.println("최댓값: " + maxArray(numberArr));
+	    // TMI
+	    System.out.println("=========================");
+	    // 숫자형 배열의 최댓값을 구하는 로직을 함수로 만든다.
+	    int maxVal = maxArray(numberArr);
+	    System.out.println(maxVal);
+	    // 동적 매개변수(파라미터)를 받는 메소드 
+	    // maxArray(int... Arr) // int와 int[]를 모두 포함하여 입력받은 값을 int[]로 변경
+	    System.out.println(maxArray(13,111434,134,314,134,31,23,213,153,1));
+	    
+	    // 로또 번호 생성기
+	    
+	    int[] lottoArray = new int[6];
+	    int idx = 0;
+		while(idx < 6) {
+			int randInt = (int)(Math.random()*45)+1;
+			boolean isDuple = false;
+			
+			// 중복체크(중복되면 isDuple은 true)
+			for(int i = 0; i < lottoArray.length; i++) {
+				if(lottoArray[i] == randInt) {
+					isDuple = true;
+				}
+			}
+			if(isDuple == false) {
+				lottoArray[idx] = randInt;
+				idx++;
+			}
+				
+		}
+		Arrays.sort(lottoArray);
+		printArray(lottoArray);
+		
 	}
-	
+	static int maxArray(int... Arr) {
+		int max = Arr[0];
+		  for(int i = 0; i < Arr.length; i++) {
+			  if(Arr[i] > max) {
+		    		max = Arr[i];
+		    	}	
+		  }
+		  return max;
+	}
+	static void minArray(int[] Arr) {
+		int min = Arr[0];
+		  for(int i = 0; i < Arr.length; i++) {
+			  if(Arr[i] < min) {
+		    		min = Arr[i];
+		    	}	
+		  }
+		  System.out.println("최소: " + min);
+	}
+	static void printArray(int[][] Arr) {
+		for(int i = 0; i < Arr.length; i++) {
+			if(i == Arr.length - 1) {
+				System.out.println(Arr[i][i]);
+			}else {
+				System.out.print(Arr[i][i] + ", ");				
+			}
+		}
+	}
+
+	static void printArray(Integer[] Arr) {
+		for(int i = 0; i < Arr.length; i++) {
+			if(i == Arr.length - 1) {
+				System.out.println(Arr[i]);
+			}else {
+				System.out.print(Arr[i] + ", ");				
+			}
+		}
+	}
+
 	static void printArray(String[] strArray) {
 		for(int i = 0; i < strArray.length; i++) {
 			if(i == strArray.length - 1) {
@@ -224,7 +434,7 @@ public class ArrayStudy {
 			}
 		}
 	}	
-	static void printArray(int[] intArray) {
+	public static void printArray(int[] intArray) {
 		for(int i = 0; i < intArray.length; i++) {
 			if(i == intArray.length - 1) {
 				System.out.println(intArray[i]);
@@ -233,5 +443,4 @@ public class ArrayStudy {
 			}
 		}
 	}
-
 }
