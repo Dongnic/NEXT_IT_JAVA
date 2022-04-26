@@ -386,6 +386,11 @@ public class ArrayStudy {
 		Arrays.sort(lottoArray);
 		printArray(lottoArray);
 		
+		
+		
+		
+		
+		
 	}
 	static int maxArray(int... Arr) {
 		int max = Arr[0];
