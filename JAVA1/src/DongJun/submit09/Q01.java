@@ -24,8 +24,8 @@ public class Q01 {
 		// 중복체크 및 제거 
 		System.out.print("Q01-3 중복제거 : ");
 		printArray(remove(intArray));
-		System.out.print("\n");
-	
+		System.out.print("\n");		
+		
 		// Q1 - 4
 		// 오름차순 정렬	
 		System.out.print("Q01-4 오름차순 : ");
@@ -77,7 +77,7 @@ public class Q01 {
 				if(intArray.get(j) == intArray.get(i)) {			
 					intArray.remove(i); // 같으면 해당 인덱스 위치의 값을 지움
 					j = 0;    // 같은 값이 있었다면 다시 처음부터 체크하기 위함 
-					i = j;
+//					i = j;
 				}
 			}			
 		}

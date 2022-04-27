@@ -77,8 +77,9 @@ public class Variable_Main {
 		// 만약 시작 인덱스만 넣을 경우 해당 문자열을 시작 인덱스부터 끝까지 자른다.
 		System.out.println(fruits.substring(15));
 		int cherryIndex = fruits.indexOf("e");
-		System.out.println(fruits.substring(cherryIndex));
 		
+		System.out.println(fruits.substring(cherryIndex));
+		System.out.println("========");
 		System.out.println(fruits.substring(fruits.indexOf("Banana")));
 		
 		// .replace("바꿔야 하는 문자열", "바꿀 문자열")

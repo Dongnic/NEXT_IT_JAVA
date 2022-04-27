@@ -430,7 +430,7 @@ public class ArrayStudy {
 		}
 	}
 
-	static void printArray(String[] strArray) {
+	public static void printArray(String[] strArray) {
 		for(int i = 0; i < strArray.length; i++) {
 			if(i == strArray.length - 1) {
 				System.out.println(strArray[i]);

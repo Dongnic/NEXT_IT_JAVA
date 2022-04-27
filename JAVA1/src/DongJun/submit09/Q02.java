@@ -9,11 +9,18 @@ public class Q02 {
 		ArrayList<String> wife = new ArrayList<String>();
 		wife.add("냉장고");
 		wife.add("세탁기");
+		wife.add("노트북");
 		wife.add("에어컨");
+		wife.add("에어컨");
+		wife.add("에어컨");
+		wife.add("에어컨");
+		
 		
 		ArrayList<String> husband = new ArrayList<String>();
 		husband.add("노트북");
 		husband.add("TV");
+		husband.add("TV");
+		husband.add("로봇청소기");
 		husband.add("에어컨");
 		
 		// Q02 - 1 
@@ -26,7 +33,26 @@ public class Q02 {
 			}			
 		}
 		remove(couple); // 혹시 모르는 중복 제거 
-		System.out.println("같이 사고싶은 물건 : " + couple);
+		System.out.println("1-MY 같이 사고싶은 물건 : " + couple);
+		
+		// Q02 - 1 A1
+		ArrayList<String> wantList = new ArrayList<String>();
+		for(int i = 0; i < wife.size(); i++) {
+			if(husband.indexOf(wife.get(i)) != -1) {
+				wantList.add(wife.get(i));
+			}
+		}
+		remove(wantList);
+		System.out.println("1-A1 같이 사고싶은 물건 : " + wantList);
+		
+		// Q02 - 1 A2
+		wantList = new ArrayList<>(); // 초기화
+		wantList.addAll(wife); // 와이프 구매 물건을 전부 넣음
+		remove(wantList);
+		System.out.println("1-A2 남편이 사고싶은 물건 : " + wantList);
+		wantList.retainAll(husband); // 남편 구매물건을 교집합으로 넣음 
+		remove(wantList);
+		System.out.println("1-A2 같이 사고싶은 물건 : " + wantList);
 		
 		// Q02 - 2
 		ArrayList<String> sum = new ArrayList<String>(wife); // 와이프 물품 넣음
@@ -35,7 +61,7 @@ public class Q02 {
 		}
 		remove(sum); // 중복물품 제거
 		System.out.println("모두 구매하는 물건 : " + sum);
-				
+		
 	} // main
 	
 	// 중복제거

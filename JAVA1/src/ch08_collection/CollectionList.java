@@ -73,11 +73,11 @@ public class CollectionList {
 		// 해당 인덱스의 값을 값1로 교체
 		students.set(1, "임동성");
 		System.out.println(students); // [송나겸, 임동성, 박설리, 박승주, 가나혜, 최윤정]
-		
+		System.out.println("=======================여기 ==============");
 		// .contains(값)
 		// 리스트안에 해당 값이 존재하는지 체크
 		// 존재하면 true, 없으면 false
-		System.out.println(students.contains("송나겸")); // true
+		System.out.println(students.contains("나겸")); // true
 		
 		// indexOf(값)
 		// 리스트안에 해당 값이 어디에 존재하는 지 체크
