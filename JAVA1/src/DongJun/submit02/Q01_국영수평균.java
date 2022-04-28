@@ -2,7 +2,7 @@ package DongJun.submit02;
 
 import java.util.Scanner;
 
-public class Q01 {
+public class Q01_국영수평균 {
 
 	public static void main(String[] args) {
 

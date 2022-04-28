@@ -1,6 +1,6 @@
 package DongJun.submit04;
 
-public class Q01_A {
+public class Q01_원판돌리기_A {
 
 /*  미비한 점
  *  if 에 불필요 하게 많은 조건 사용

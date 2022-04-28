@@ -1,6 +1,6 @@
 package DongJun.submit04;
 
-public class Q01 {
+public class Q01_원판돌리기 {
 
 	public static void main(String[] args) {
 	

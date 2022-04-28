@@ -1,6 +1,6 @@
 package DongJun.submit05;
 import java.util.Scanner;
-public class Q01 {
+public class Q01_업다운게임 {
 
 	public static void main(String[] args) {
 

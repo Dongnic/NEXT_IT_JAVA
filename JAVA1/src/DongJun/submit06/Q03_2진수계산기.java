@@ -1,6 +1,6 @@
 package DongJun.submit06;
 
-public class Q03 {
+public class Q03_2진수계산기 {
 
 	public static void main(String[] args) {
 		String myBinaryStr = makeBinary(16);

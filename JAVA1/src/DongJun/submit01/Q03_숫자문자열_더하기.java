@@ -1,6 +1,6 @@
 package DongJun.submit01;
 
-public class Q03 {
+public class Q03_숫자문자열_더하기 {
 	public static void main(String[] args) {
 		String example ="278";
 		int addnum = Integer.parseInt(example.substring(0, 1)) 

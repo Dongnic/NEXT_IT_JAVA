@@ -1,6 +1,6 @@
 package DongJun.submit08;
 
-public class Q02 {
+public class Q02_문자열_차순정렬 {
 
 	public static void main(String[] args) {
 		 

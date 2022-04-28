@@ -2,7 +2,7 @@ package DongJun.submit09;
 
 import java.util.ArrayList;
 
-public class Q01 {
+public class Q01_리스트_중복제거_차순정렬 {
 
 	public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package DongJun.submit06;
 import java.util.Scanner;
-public class Q01 {
+public class Q01_명함만들기 {
 
 	public static void main(String[] args) {
 

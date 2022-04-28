@@ -1,6 +1,6 @@
 package DongJun.submit01;
 
-public class Q02 {
+public class Q02_너구리문자열제거 {
 
 	public static void main(String[] args) {
 		String enigma = "너오구늘리뭐너먹구지리";

@@ -1,6 +1,6 @@
 package DongJun.submit04;
 import java.util.Scanner;
-public class Q03 {
+public class Q03_거꾸로트리 {
 
 	public static void main(String[] args) {
 		

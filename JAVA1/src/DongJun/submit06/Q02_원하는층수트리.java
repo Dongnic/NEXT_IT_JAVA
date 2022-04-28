@@ -1,6 +1,6 @@
 package DongJun.submit06;
 
-public class Q02 {
+public class Q02_원하는층수트리 {
 
 	public static void main(String[] args) {
 		makeTree(6);

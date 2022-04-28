@@ -1,6 +1,6 @@
 package DongJun.submit05;
 import java.util.Scanner;
-public class Q02 {
+public class Q02_엘리베이터 {
 
 	public static void main(String[] args) {
 		

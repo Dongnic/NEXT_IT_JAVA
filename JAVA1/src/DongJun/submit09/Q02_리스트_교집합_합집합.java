@@ -2,7 +2,7 @@ package DongJun.submit09;
 
 import java.util.ArrayList;
 
-public class Q02 {
+public class Q02_리스트_교집합_합집합 {
 
 	public static void main(String[] args) {
 		

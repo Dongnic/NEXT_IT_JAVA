@@ -1,6 +1,6 @@
 package DongJun.submit05;
 import java.util.Scanner;
-public class Q03 {
+public class Q03_문자열갯수세기 {
 
 	public static void main(String[] args) {
 

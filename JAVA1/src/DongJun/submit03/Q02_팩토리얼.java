@@ -1,6 +1,6 @@
 package DongJun.submit03;
 
-public class Q02 {
+public class Q02_팩토리얼 {
 
 	public static void main(String[] args) {
 		

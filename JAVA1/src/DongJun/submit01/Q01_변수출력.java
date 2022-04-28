@@ -1,6 +1,6 @@
 package DongJun.submit01;
 
-public class Q01 {
+public class Q01_변수출력 {
 
 	public static void main(String[] args) {
 			String name = "홍길동";

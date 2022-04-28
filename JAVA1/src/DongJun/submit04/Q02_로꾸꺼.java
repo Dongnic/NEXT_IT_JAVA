@@ -1,6 +1,6 @@
 package DongJun.submit04;
 import java.util.Scanner;
-public class Q02 {
+public class Q02_로꾸꺼 {
 
 	public static void main(String[] args) {
 		

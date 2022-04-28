@@ -2,7 +2,7 @@ package DongJun.submit08;
 
 import ch07_array.ArrayStudy;
 
-public class Q01 {
+public class Q01_로또 {
 
 	public static void main(String[] args) {
 		int[] intArray = makeLotto();

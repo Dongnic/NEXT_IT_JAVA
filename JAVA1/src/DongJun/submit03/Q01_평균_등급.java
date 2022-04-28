@@ -1,6 +1,6 @@
 package DongJun.submit03;
 import java.util.Scanner;
-public class Q01 {
+public class Q01_평균_등급 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
