@@ -28,13 +28,14 @@ public class BoardDB {
 		}
 	}
 	// 게시글 조회(클릭한 거)
-	public void selectBoard(int no) {
+	public boolean selectBoard(int no) {
 		for(int i = 0; i < boardList.size(); i++) {
 			if(boardList.get(i).getNo() == no) {
 				System.out.println("제목 : " + boardList.get(i).getTitle());
 				System.out.println("작성자 : " + boardList.get(i).getAutor());
 				System.out.println("글내용 : " + boardList.get(i).getContent());
+				return true;
 			}
-		}
+		}return false;
 	}
 }

@@ -14,9 +14,9 @@ public class MemberMain {
 			System.out.println("무엇을 하시겠습니까?");
 			System.out.println("1. 회원가입 | 2. 로그인 | 3. 회원목록 | 4. 종료");
 			System.out.print(">>> ");
-			
 			int command = Integer.parseInt(sc.nextLine());
 			
+			// 책 입고
 			if(command == 1) {
 				// 회원가입 
 				System.out.print("아이디 입력: ");

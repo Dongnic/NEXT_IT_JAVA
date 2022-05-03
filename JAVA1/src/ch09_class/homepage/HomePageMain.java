@@ -85,8 +85,10 @@ public class HomePageMain {
 							int no = Integer.parseInt(sc.nextLine());
 							
 							// 해당글의 내용까지 출력
-							boardDB.selectBoard(no);
-							boardDB.printBoard();
+//							boardDB.selectBoard(no);
+							if(!boardDB.selectBoard(no)) {
+								System.out.println("해당 게시글의 내용이 없습니다");
+							}
 							
 						}else if(select == 3) {
 							System.out.println("로그아웃 되었습니다");
