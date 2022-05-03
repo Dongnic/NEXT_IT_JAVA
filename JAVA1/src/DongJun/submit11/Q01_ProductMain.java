@@ -17,7 +17,7 @@ public class Q01_ProductMain {
 		prodList.add(new product("선풍기", 100_000));
 		System.out.println("-- 2번 --");
 		System.out.println(prodList);
-		
+		 
 		// Q01 - 3
 		System.out.println("-- 3번 --");
 		Collections.sort(prodList);
