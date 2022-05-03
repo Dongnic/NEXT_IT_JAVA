@@ -8,9 +8,9 @@ public class HomePageMain {
 		
 		// MemberDB 기본 생성자가 private이기 때문에 접근 불가
 //		MemberDB memberDB = new MemberDB();
-		
 		MemberDB memberDB = MemberDB.getInstance();
 		
+		BoardDB boardDB = BoardDB.getInstance();
 		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
@@ -57,6 +57,45 @@ public class HomePageMain {
 //				if(member.getPw().equals(pw)) {
 				if(pw.equals(member.getPw())) {
 					System.out.println("로그인 성공 ! ");
+					
+					while(true) {
+						// TODO 게시글 목록 출력 
+						System.out.println("무엇을 하시겠습니까?");
+						System.out.println("1. 글쓰기 | 2. 글 목록 조회 | 3. 로그아웃");
+						System.out.print(">>>");
+						
+						int select = Integer.parseInt(sc.nextLine());
+						if(select == 1) {
+							// TODO 글쓰기
+							System.out.println("제목을 입력하세요");
+							System.out.print(">>>");
+							String title = sc.nextLine();
+							System.out.println("내용을 입력하세요");
+							System.out.print(">>>");
+							String content = sc.nextLine();
+							
+							// BoardDB에 글 등록 메소드 만들기
+							// 글제목, 글내용, 작성자
+							boardDB.write(title, content, member.getId());
+							
+						}else if(select == 2) {
+							// TODO 글목록 조회 
+							System.out.println("글 번호를 입력하세요");
+							System.out.print(">>>");
+							int no = Integer.parseInt(sc.nextLine());
+							
+							// 해당글의 내용까지 출력
+							boardDB.selectBoard(no);
+							boardDB.printBoard();
+							
+						}else if(select == 3) {
+							System.out.println("로그아웃 되었습니다");
+							break;
+						}
+						
+						
+					}
+					
 				}else {
 					System.out.println("아이디 혹은 비밀번호가 틀립니다");
 				}
@@ -67,7 +106,8 @@ public class HomePageMain {
 			
 			
 		}
-		BoardDB boardDB = BoardDB.getInstance();
+		
+	
 		
 	} // main
 

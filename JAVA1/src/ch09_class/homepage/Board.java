@@ -6,6 +6,7 @@ public class Board {
 	private String title;   // 글 제목
 	private String content; // 글 내용
 	private String autor;   // 글 작성자
+	
 	public int getNo() {
 		return no;
 	}
@@ -15,7 +16,6 @@ public class Board {
 	}
 	
 	public Board(int no, String title, String content, String autor) {
-		super();
 		this.no = no;
 		this.title = title;
 		this.content = content;
