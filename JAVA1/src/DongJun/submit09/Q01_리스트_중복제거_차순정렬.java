@@ -6,11 +6,23 @@ public class Q01_리스트_중복제거_차순정렬 {
 
 	public static void main(String[] args) {
 
+		
 		// Q1 - 1
 		// 랜덤 숫자
 		ArrayList<Integer> intArray = new ArrayList<Integer>();		
-		for(int i = 0; i < 10; i++) {
-			intArray.add((int)(Math.random()*11)+10);
+		ArrayList<Integer> intArray2 = new ArrayList<Integer>();
+		intArray2.add(1);
+		intArray2.add(2);
+		intArray2.add(3);
+		intArray2.add(4);
+//		intArray2.add(5);
+//		intArray2.add(6);
+//		intArray2.add(7);
+//		intArray2.add(8);
+//		intArray2.add(9);
+//		intArray2.add(10);
+		for(int i = 0; i < 100; i++) {
+			intArray.add((int)(Math.random()*intArray2.size()));
 		}
 		System.out.println("Q01-1 랜덤숫자 : " + intArray);
 
