@@ -18,6 +18,10 @@ public class Poker {
 	// 배팅 칩 
 	int betChip;
 	
+/* 
+	 실행부 
+*/
+	
 	// 첫 카드 배열 생성
 	public void createCard() {
 		round = 1;
@@ -28,47 +32,34 @@ public class Poker {
 			setCard.add(new Card("❤️", i, true));			
 		}
 	}
-	// 카드 출력 (전체)
-	public void showCard() {
-		for(int i = 0; i < setCard.size(); i++) {
-			System.out.println(setCard.get(i));
-		}
-	}
-	// 카드 출력 (보유)
-	public void showCard(ArrayList<Card> card) {
-		for(int i = 0; i < card.size(); i++) {
-			System.out.println(card.get(i) + " #");
-		}
-	}
-	// 전체 칩 출력
-	public boolean showChip() {
-		System.out.println("\n" + "🌕상대 칩 : " + comChip + "\n" + "🌕 내 칩  : " + myChip);
-		if(myChip <= 0) {
-			return true;
-		}
-		return false;
-	}
-	// 보유 칩 출력
-	public void showBetChip() {
-		System.out.println("\n" + "[배팅 칩 : " + betChip + "]\n[" + "보유 칩 : " + myChip + "]" + "\n");
-	}
 	// 게임 시작
 	public boolean startCard() {
 		// 카드 갯수 체크
 		if(setCard.size() == 0) {
-			System.out.println("🙏====== FINSH GAME ======🙏");
+			System.out.println();
+			    System.out.println("🙏====== FINSH GAME ======🙏");
 			if(myChip > comChip) {
-				System.out.println("승리 하셨습니다. 남은 칩 : " + myChip + "상대 칩 : " + comChip);
+				System.out.println("       승리 하셨습니다 👑    " + "\n" + "🧿남은 칩 : " + myChip + " 🧿상대 칩 : " + comChip);
 			}else if(myChip < comChip){
-				System.out.println("패배 하셨습니다. 남은 칩 : " + myChip + "상대 칩 : " + comChip);
+				System.out.println("       패배 하셨습니다 👎    " + "\n" + "🧿남은 칩 : " + myChip + " 🧿상대 칩 : " + comChip);
 			}else if(myChip == comChip) {
-				System.out.println("우열을 가릴 수 없습니다. 남은 칩 : " + myChip + "상대 칩 : " + comChip);
+				System.out.println(" 🙌 우열을 가릴 수 없습니다 🙌 " + "\n" + "🧿남은 칩 : " + myChip + " 🧿상대 칩 : " + comChip);
 			}
 			return true;
 		}
+		// 라운드 시작
 		else {
+			if(round >= 9) {
+				System.out.println();
+				System.out.println("🏳🏴🏳🏴🏳🏴🏳🏴🏳🏴🏳🏴");
+				System.out.println();
+				System.out.println("========= ROUND "+ round +" =========");
+				System.out.println();
+				System.out.println("🏳🏴🏳🏴🏳🏴🏳🏴🏳🏴🏳🏴");
+			}else {
 			System.out.println();
 			System.out.println("========= ROUND "+ round +" =========");
+			}
 			for(int i = 0; i < 4; i++) {
 				System.out.println("....... 카드 섞는 중 .......");
 				try {
@@ -79,7 +70,7 @@ public class Poker {
 			}
 			// 보유칩 현황 출력
 			showChip();
-			// 기본 배팅 차감
+			// 기본 배팅 1, 차감
 			betChip = 1;
 			myChip -= betChip;
 			comChip -= betChip;
@@ -88,6 +79,7 @@ public class Poker {
 			myCard.add(setCard.get((int)(Math.random()*setCard.size())));
 			// 본인에게 부여된 카드 배열에서 삭제
 			removeCard(myCard);
+			// 상대 카드 부여
 			comCard.add(setCard.get((int)(Math.random()*setCard.size())));
 			// 상대에게 부여된 카드 배열에서 삭제
 			removeCard(comCard);
@@ -95,12 +87,54 @@ public class Poker {
 		// 라운드 수 1 증가
 		round++;
 		// 카드 출력 
-		System.out.println("#########################");
-		System.out.print("# [상대패] => ");
-		showCard(comCard);
-		System.out.println("#########################");
-		
+		showComCard();
 		return false;
+	}
+	
+/* 
+	 현황 체크  
+*/
+	
+	// 카드 출력 (전체)
+	public void showCard() {
+		for(int i = 0; i < setCard.size(); i++) {
+			System.out.println(setCard.get(i));
+		}
+	}
+	// 카드 출력 (보유)
+	public void showCard(ArrayList<Card> card) {
+		for(int i = 0; i < card.size(); i++) {
+			System.out.println(card.get(i) + " ");
+		}
+	}
+	// 내 카드 출력
+	public void showMyCard() {
+		System.out.println("##########################");
+		System.out.print("🎴 [내 패] => ");
+		showCard(myCard);
+		System.out.println("##########################");
+	}
+	// 상대 카드 출력
+	public void showComCard() {
+		System.out.println("##########################");
+		System.out.print("🎴 [상대패] => ");
+		showCard(comCard);
+		System.out.println("##########################");
+	}
+	// 전체 칩 출력
+	public boolean showChip() {
+		System.out.println("\n" + "🧿상대 칩 : " + comChip + "\n" + "🧿 내 칩  : " + myChip);
+		if(myChip <= 0) {
+			return true;
+		}
+		return false;
+	}
+	// 보유 칩 출력
+	public void showBetChip() {
+		System.out.println("\n" + "[배팅 칩 : " + betChip + "]\n[" + "보유 칩 : " + myChip + "]" + "\n");
+	}
+	public void showMyChip() {
+		System.out.println("\n"+"🧿 내 칩  : " + myChip);
 	}
 	// 칩 0개인지 체크 
 	public void checkChip() {
@@ -111,6 +145,11 @@ public class Poker {
 			setCard = new ArrayList<>();
 		}
 	}
+	
+/*
+     결과 도출  	
+ */
+
 	// 결과 계산
 	public void checkGame() {
 		for(int i = 0; i < 4; i++) {
@@ -131,10 +170,7 @@ public class Poker {
 			// 무승부
 			System.out.println();
 			System.out.println("무승부.. 재경기를 시작합니다.");
-			System.out.println("#########################");
-			System.out.print("# [내 패] => ");
-			showCard(myCard);
-			System.out.println("#########################");
+			showMyCard();
 			finshCard();
 			gameDraw();
 		}
@@ -146,9 +182,34 @@ public class Poker {
 		System.out.println("===========================");
 		System.out.println("==== WIN !! ✌✌✌✌ ====");
 		System.out.println("===========================");
+		showMyChip();
 		betChip = 0;
 		finshCard();
 		checkChip();
+	}
+	// 포기 (패널티 [내 패 10 : -10], [내 패 >= 상대패 : -5])
+	public void gameDie() {
+		if(myCard.get(0).getCardnumber() == 10) {
+			comChip += 10;
+			myChip -= 10;
+			System.out.println();
+			System.out.println("==========================");
+			System.out.println("== 10 다이 (패널티 -10) 😝");
+			System.out.println("==========================");
+			showMyCard();
+			gameLose();
+		}else if(myCard.get(0).getCardnumber() >= comCard.get(0).getCardnumber()) {
+			comChip += 5;
+			myChip -= 5;
+			System.out.println();
+			System.out.println("==========================");
+			System.out.println("== 왜 죽었어 (패널티 -5)😝");
+			System.out.println("==========================");
+			showMyCard();
+			gameLose();
+		}else {
+			gameLose();
+		}
 	}
 	// 패배 
 	public void gameLose() {
@@ -157,18 +218,7 @@ public class Poker {
 		System.out.println("===========================");
 		System.out.println("==== LOSE  😓😓😓😓 =====");
 		System.out.println("===========================");
-		if(myCard.get(0).getCardnumber() == 10) {
-			comChip += 10;
-			myChip -= 10;
-			System.out.println();
-			System.out.println("===========================");
-			System.out.println("== 10 다이 (패널티 -10)😝==");
-			System.out.println("===========================");
-			System.out.println("#########################");
-			System.out.print("# [내 패] => ");
-			showCard(myCard);
-			System.out.println("#########################");
-		}
+		showMyChip();
 		betChip = 0;
 		finshCard();
 		checkChip();
@@ -177,7 +227,16 @@ public class Poker {
 	public void gameDraw() {
 		System.out.println();
 		System.out.println("========== ROUND "+ round +" ==========");
-		System.out.println("======== 👀 REMATCH 👀 ========");
+		System.out.println("==== 👀 AUTO REMATCH 👀 ====");
+		// 딜레이
+		for(int i = 0; i < 4; i++) {
+			System.out.println("....... 카드 섞는 중 .......");
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		// 본인 카드 부여 
 		myCard.add(setCard.get((int)(Math.random()*setCard.size())));
 		// 본인에게 부여된 카드 배열에서 삭제
@@ -188,14 +247,9 @@ public class Poker {
 		// 라운드 수 1 증가
 		round++;
 		// 카드 출력 
-		System.out.println("#########################");
-		System.out.print("# [상대패] => ");
-		showCard(comCard);
-		System.out.println("#########################");
-		System.out.println("#########################");
-		System.out.print("# [내  패] => ");
-		showCard(myCard);
-		System.out.println("#########################");
+		showComCard();
+		
+		showMyCard();
 		checkGame();
 	}
 	// 올인 
@@ -205,17 +259,15 @@ public class Poker {
 			betChip = betChip + myChip;
 			comChip = comChip - myChip;
 			myChip = 0;
-			showBetChip();
-			checkGame();
 		}else {
 			System.out.println("상대의 칩 수만큼 배팅합니다.");
 			System.out.println(comChip + "개 올인하셨습니다 💰");
 			betChip = betChip + comChip;
 			myChip = myChip - comChip;
 			comChip = 0;
-			showBetChip();
-			checkGame();
 		}
+		showBetChip();
+		checkGame();
 	}
 	// 배팅
 	public boolean bet(int num) {
@@ -241,16 +293,27 @@ public class Poker {
 		checkGame();
 		return false;
 	}
+	
+	// 힌트거부
+	public void hint() {
+		comChip += 5;
+		myChip -= 5;
+		System.out.println();
+		System.out.println("==========================");
+		System.out.println("== 칩 많네요 (패널티 -5)😝");
+		System.out.println("==========================");
+		showChip();
+	}
+	
+/*
+ 	 실행 종료
+ */
 	// 게임 종료 후 배분된 카드 삭제
 	public void finshCard() {
-		if(setCard.size() == 0) {
-
-		}else {
 		myCard.remove(0);
 		comCard.remove(0);
-		}
 	}
-	// 사용카드 삭제 
+	// 배열에서 분배한 카드 삭제 
 	public void removeCard(ArrayList<Card> card) {
 		for(int i = 0; i < setCard.size(); i++) {
 			if(setCard.get(i).getCardnumber() == card.get(0).getCardnumber()) {
@@ -260,4 +323,5 @@ public class Poker {
 			}
 		}
 	}
+	
 }

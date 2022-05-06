@@ -45,7 +45,7 @@ public class LibraryMain {
 			}
 			// 책 검색 
 			else if(command == 4) {
-				// TODO 책 검색
+				// 책 검색
 				inputName();
 				String name = sc.nextLine();
 				library.google(name);

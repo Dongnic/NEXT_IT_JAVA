@@ -39,7 +39,7 @@ public class HomePageMain {
 				memberDB.printMember();			
 				
 			}else if(command == 3) {
-				// TODO 로그인
+				// 로그인
 				System.out.println("아이디를 입력하세요");
 				System.out.print(">>>");
 				String id = sc.nextLine();
@@ -59,14 +59,14 @@ public class HomePageMain {
 					System.out.println("로그인 성공 ! ");
 					
 					while(true) {
-						// TODO 게시글 목록 출력 
+						// 게시글 목록 출력 
 						System.out.println("무엇을 하시겠습니까?");
 						System.out.println("1. 글쓰기 | 2. 글 목록 조회 | 3. 로그아웃");
 						System.out.print(">>>");
 						
 						int select = Integer.parseInt(sc.nextLine());
 						if(select == 1) {
-							// TODO 글쓰기
+							// 글쓰기
 							System.out.println("제목을 입력하세요");
 							System.out.print(">>>");
 							String title = sc.nextLine();
@@ -79,7 +79,7 @@ public class HomePageMain {
 							boardDB.write(title, content, member.getId());
 							
 						}else if(select == 2) {
-							// TODO 글목록 조회 
+							// 글목록 조회 
 							System.out.println("글 번호를 입력하세요");
 							System.out.print(">>>");
 							int no = Integer.parseInt(sc.nextLine());
