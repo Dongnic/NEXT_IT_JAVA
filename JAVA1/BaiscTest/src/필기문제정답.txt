@@ -1,0 +1,9 @@
+작성 예시
+
+1.   1번  or 2번
+
+2.    "id",  "age" , "pass"     /   "id",  "age" , "pass"     
+
+3.     n번째 줄 : 무슨무슨 Exception
+
+4.     "변수age",  "user Age" ,  "user2 Age"   /   "변수age",  "user Age" ,  "user2 Age"
