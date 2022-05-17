@@ -4,10 +4,7 @@ public class Character {
 	private String name;
 	private int damage;
 	private int hp;
-	
-	public Character() {
-		
-	}
+	public Battle battle;
 	public Character(String name, int damage, int hp) {
 		super();
 		this.name = name;
@@ -15,6 +12,11 @@ public class Character {
 		this.hp = hp;
 	}
 
+	public void die() {
+		System.out.println(name + " 사망");
+		battle.outOfBattle();
+	}
+	
 	public String getName() {
 		return name;
 	}
