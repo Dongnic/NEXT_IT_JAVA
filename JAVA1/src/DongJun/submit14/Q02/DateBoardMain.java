@@ -62,14 +62,15 @@ public class DateBoardMain {
 		for(int i = 0; i < dbList.size(); i++) {
 			System.out.println(dbList.get(i));
 		}
-		System.out.println("4번");
+		System.out.println("4번 최근 한달");
 		// 4
 		for(int j = 0; j < dbList.size(); j++) {
 			Date date1 = sdf.parse(dbList.get(j).getDate());
-			if(30 >( (date.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24) ))
+			if(30 > ( (date.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24) )
+					&& 0 < ( (date.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24) ))
 			System.out.println(dbList.get(j));
 		}
-		System.out.println("5번");
+		System.out.println("5번 이번달");
 		// 5
 		for(int i = 0; i < dbList.size(); i++) {
 			Date date1 = sdf.parse(dbList.get(i).getDate());
@@ -77,15 +78,16 @@ public class DateBoardMain {
 				System.out.println(dbList.get(i));
 			}
 		}
-		System.out.println("6번");
+		System.out.println("6번 2월");
 		// 6
 		for(int i = 0; i < dbList.size(); i++) {
 			Date date1 = sdf.parse(dbList.get(i).getDate());
-			if(date1.getMonth() == date.getMonth()-3) {
+			if(date1.getMonth() == 1) {
+				System.out.println(date1.getMonth());
 				System.out.println(dbList.get(i));
 			}
 		}
-		System.out.println("7번");
+		System.out.println("7번 2/14 ~ 3/21");
 		// 7
 		// 날짜 연산
 		String sDay = "2022.02.14 00:00:00";
