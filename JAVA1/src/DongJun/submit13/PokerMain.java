@@ -115,7 +115,7 @@ public class PokerMain {
 		System.out.println();
 		System.out.println(" 🂡 🂢 🂣 🂤 🂥 🂦 🂧 🂨 🂩 🂪  ");
 		System.out.println();
-		System.out.println(" ❤️❤️ NEXT GamBling ❤️❤️");
+		System.out.println(" ❤️❤️ Indian  Poker ❤️❤️");
 		System.out.println();
 		System.out.println(" 🂡 🂢 🂣 🂤 🂥 🂦 🂧 🂨 🂩 🂪");
 		System.out.println();
