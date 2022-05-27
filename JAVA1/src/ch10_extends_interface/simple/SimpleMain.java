@@ -4,16 +4,16 @@ public class SimpleMain {
 
 	public static void main(String[] args) {
 		
-		Child dj = new Child("유동준", 30);
+		Child child = new Child("유동준", 30);
 		
-		System.out.println(dj.getName());
-		System.out.println(dj.getAge());
+		System.out.println(child.getName()); // 유동준
+		System.out.println(child.getAge());  // 30
 		
-		dj.sayHello();
+		child.sayHello(); // 저는 아들 유동준
 		
 		// 형변환 기능
-		Parent baby = new Child("2세", 4);
-		baby.sayHello();
+		Parent parent = new Child("동준 2세", 4);
+		parent.sayHello(); // 저는 아들 동준 2세 
 		
 	}
 }

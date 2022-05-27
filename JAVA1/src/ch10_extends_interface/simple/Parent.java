@@ -42,7 +42,7 @@ public class Parent {
 	}
 	
 	public void sayHello() {
-		System.out.println("유동준입니다.");
+		System.out.println("부모 유동준입니다.");
 	}
 
 }

@@ -51,7 +51,7 @@ public class Main {
 				}
 				// 게임선택
 				while(true) {
-					
+					new IntroGame();
 				}
 				
 			}else if(cmd == 3) {
