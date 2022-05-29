@@ -11,6 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		MemberService memService = MemberService.getInstance();
 		CharacterService chaService = CharacterService.getInstance();
+		IntroGame introGame = new IntroGame();
 		Scanner sc = new Scanner(System.in);
 		// 로그인, 가입
 		while(true) {
@@ -49,10 +50,8 @@ public class Main {
 				if(pw.equals(login.getMemPw())) {
 					System.out.println(login.getMemId() + "님 환영합니다.");
 				}
-				// 게임선택
-				while(true) {
-					new IntroGame();
-				}
+				// 게임인트로
+				while(introGame.Intro()) {}
 				
 			}else if(cmd == 3) {
 				System.out.println("프로그램을 종료합니다.");

@@ -1,16 +1,16 @@
-package project01.model;
+package project01.Game_IndianPoker;
 
-public class PokerCardVO {
+public class Game_IndianPoker_CardVO {
 	String cardtype;      // 카드 타입 (클로버, 다이아)
 	int cardnumber;       // 카드 숫자 ( 1 ~ 10 )
 	boolean check = true; // 카드 사용 여부 
 	
 	// 기본 생성자 
-	public PokerCardVO() {
+	public Game_IndianPoker_CardVO() {
 		
 	}
 	
-	public PokerCardVO(String cardtype, int cardnumber, boolean check) {
+	public Game_IndianPoker_CardVO(String cardtype, int cardnumber, boolean check) {
 		this.cardtype = cardtype;
 		this.cardnumber = cardnumber;
 		this.check = check;
