@@ -2,8 +2,12 @@ package project01;
 
 import java.util.Scanner;
 
+import project01.Game_Escape.Game_Escape;
 import project01.Game_Graph.Game_Graph;
 import project01.Game_IndianPoker.Game_IndianPoker;
+import project01.Game_Work.Game_Work;
+import project01.model.CharacterVO;
+import project01.service.CharacterService;
 
 public class IntroGame {
 	
@@ -14,15 +18,17 @@ public class IntroGame {
 	static String topwall = ten + "┏━━━━━━━━┓  ┏━━━━━━━━┓"; 
 	static String btmwall = ten + "┗━━━━━━━━┛  ┗━━━━━━━━┛"; 
 		
-	public static boolean Intro() {
+	public static boolean Intro(CharacterVO make) {
 	Game_IndianPoker idpk = new Game_IndianPoker();	
 	Game_Graph gp = new Game_Graph();
+	CharacterService chaService = CharacterService.getInstance();
 	String[][] blank = new String[7][20];
 	blank = createBlank();
 	Scanner sc = new Scanner(System.in);
 	while(1<2) {
 		System.out.println("\n"+"\n"+"\n"+"\n"+"\n");
-		System.out.println(title+"\n");
+		System.out.println(title);
+		System.out.println(ten+ten+make.getName()+"님"+" 잔액 : "+chaService.getMoney(make.getName()).getMoney()+"\n");
 		System.out.println(indianPoker);
 		System.out.println(topwall);
 		
@@ -68,17 +74,19 @@ public class IntroGame {
 		
 		if(blank[0][10].equals("O") || blank[0][9].equals("O")) {
 			System.out.println("포커");
-			while(idpk.start()) {}
+			while(Game_IndianPoker.start(make)) {}
 		}
 		if(blank[6][10].equals("O") || blank[6][9].equals("O")) {
 			System.out.println("탈출");
+			while(Game_Escape.start(make)) {}
 		}
 		if(blank[3][0].equals("O")) {
 			System.out.println("노동");
+			while(Game_Work.start(make)) {}
 		}
 		if(blank[3][19].equals("O")) {
 			System.out.println("도박");
-			while(gp.start()) {}
+			while(Game_Graph.start(make)) {}
 		}
 		
 	} // while

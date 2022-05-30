@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import project01.model.CharacterVO;
+import project01.model.MemberVO;
 
 public class CharacterDao {
 private static CharacterDao instance = new CharacterDao();
@@ -73,11 +74,11 @@ private static CharacterDao instance = new CharacterDao();
 	public int updateCharacter(Connection conn, int money, String name) throws SQLException {
 		StringBuffer query = new StringBuffer();
 		query.append("UPDATE                 ");
-		query.append("    students			 ");
+		query.append("    character			 ");
 		query.append("SET			 		 ");
 		query.append("  money = ?			 ");
 		query.append("WHERE 1=1 			 ");
-		query.append("AND stu_id = ?		 ");
+		query.append("AND name = ?		 ");
 		
 		PreparedStatement ps = conn.prepareStatement(query.toString());
 
@@ -106,4 +107,79 @@ private static CharacterDao instance = new CharacterDao();
 		if(ps!=null) ps.close();
 		return cnt;
 	}
+	//로그인 (SELECT, WHERE)
+	public CharacterVO logincha(Connection conn, String name) throws SQLException {
+		StringBuffer query = new StringBuffer();
+		query.append("SELECT                 ");
+		query.append("    name		         ");
+		query.append("FROM					 ");
+		query.append("    character			 ");
+		query.append("WHERE 1=1 			 ");
+		query.append("AND name = ?			 ");
+		PreparedStatement ps = conn.prepareStatement(query.toString());
+		int idx = 1;
+		ps.setString(idx++, name);
+		ResultSet rs = ps.executeQuery();
+		CharacterVO result = new CharacterVO();
+		
+		while(rs.next()) {
+			result.setName(rs.getString("name"));
+		}
+		if(ps != null) ps.close();
+		if(rs != null) rs.close();
+		return result;
+	}
+	// 돈 가져오기 
+	public CharacterVO getMoney(Connection conn, String name) throws SQLException {
+		StringBuffer query = new StringBuffer();
+		query.append("SELECT                 ");
+		query.append("    money		         ");
+		query.append("FROM					 ");
+		query.append("    character			 ");
+		query.append("WHERE 1=1 			 ");
+		query.append("AND name = ?			 ");
+		PreparedStatement ps = conn.prepareStatement(query.toString());
+		int idx = 1;
+		ps.setString(idx++, name);
+		ResultSet rs = ps.executeQuery();
+		CharacterVO result = new CharacterVO();
+		
+		while(rs.next()) {
+			result.setMoney(rs.getInt("money"));
+		}
+		if(ps != null) ps.close();
+		if(rs != null) rs.close();
+		return result;
+	}
+	//로그인 (SELECT, WHERE)
+	public CharacterVO getCharacter(Connection conn, String id, String name) throws SQLException {
+		StringBuffer query = new StringBuffer();
+		System.out.println(id+ " " +name);
+		String name2 = "'"+name+"'";
+		System.out.println(name2);
+		query.append("SELECT                 ");
+		query.append("     mem_id	         ");
+		query.append("   , name		         ");
+		query.append("   , money		     ");
+		query.append("FROM					 ");
+		query.append("    character			 ");
+		query.append("WHERE 1=1 			 ");
+		query.append("AND mem_id = ?		 ");
+		query.append("AND name like ?	     ");
+		PreparedStatement ps = conn.prepareStatement(query.toString());
+		int idx = 1;
+		ps.setString(idx++, id);
+		ps.setString(idx++, name);
+		ResultSet rs = ps.executeQuery();
+		CharacterVO result = new CharacterVO();
+		
+		while(rs.next()) {
+			result.setMemId(rs.getString("mem_id"));
+			result.setName(rs.getString("name"));
+			result.setMoney(rs.getInt("money"));
+		}
+		if(ps != null) ps.close();
+		if(rs != null) rs.close();
+		return result;
+	}	
 }

@@ -69,5 +69,43 @@ public class CharacterService {
 		}
 		return 0;
 	}
+	// 캐릭터 로그인
+	public CharacterVO logincha(String name){
+		Connection conn = cp.getConnection();
+		try {
+			return dao.logincha(conn, name);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn != null) cp.releaseConnection(conn);
+		}
+		return new CharacterVO();
+	}
+	
+	// 돈체크 
+	public CharacterVO getMoney(String name){
+		Connection conn = cp.getConnection();
+		try {
+			return dao.getMoney(conn, name);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn != null) cp.releaseConnection(conn);
+		}
+		return new CharacterVO();
+	}
+	
+	// 캐릭터 체크 
+	public CharacterVO getCharacter(String id, String name){
+		Connection conn = cp.getConnection();
+		try {
+			return dao.getCharacter(conn, id, name);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn != null) cp.releaseConnection(conn);
+		}
+		return new CharacterVO();
+	}
 	
 }

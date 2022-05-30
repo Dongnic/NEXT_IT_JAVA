@@ -1,7 +1,8 @@
 package project01.Game_IndianPoker;
 
-import java.util.ArrayList;
 import java.util.Scanner;
+
+import project01.model.CharacterVO;
 
 
 public class Game_IndianPoker {
@@ -11,7 +12,7 @@ public class Game_IndianPoker {
 	public Game_IndianPoker() {
 	}
 	
-	public static boolean start() {
+	public static boolean start(CharacterVO make) {
 		Scanner sc = new Scanner(System.in);
 		main: while(true) {
 			System.out.println();
