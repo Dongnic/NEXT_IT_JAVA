@@ -29,19 +29,22 @@ public class Game_IndianPoker_Check {
 		}
 	}
 	// 게임 시작
-	public boolean startCard() {
+	public int startCard() {
 		// 카드 갯수 체크
 		if(setCard.size() == 0) {
 			System.out.println();
 			    System.out.println("🙏====== FINSH GAME ======🙏");
 			if(myChip > comChip) {
 				System.out.println("       승리 하셨습니다 👑    " + "\n" + "🧿남은 칩 : " + myChip + " 🧿상대 칩 : " + comChip);
+				return 1;
 			}else if(myChip < comChip){
 				System.out.println("       패배 하셨습니다 👎    " + "\n" + "🧿남은 칩 : " + myChip + " 🧿상대 칩 : " + comChip);
+				return 2;
 			}else if(myChip == comChip) {
 				System.out.println(" 🙌 우열을 가릴 수 없습니다 🙌 " + "\n" + "🧿남은 칩 : " + myChip + " 🧿상대 칩 : " + comChip);
+				return 3;
 			}
-			return true;
+			return 4;
 		}
 		// 라운드 시작
 		else {
@@ -84,7 +87,7 @@ public class Game_IndianPoker_Check {
 		round++;
 		// 카드 출력 
 		showComCard();
-		return false;
+		return 0;
 	}
 	
 /* 

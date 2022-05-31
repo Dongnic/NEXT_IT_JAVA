@@ -10,10 +10,14 @@ public class Game_Work {
 	
 	public static boolean start(CharacterVO make) {
 		Scanner sc = new Scanner(System.in);
-		int money = make.getMoney();
+		CharacterService chaService = CharacterService.getInstance();
+		int gotMoney=0;
 		while(true) {
+			gotMoney = chaService.getMoney(make.getName()).getMoney();
 			System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
-			System.out.println("["+money+"원]");
+			System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n");
+			System.out.println("["+gotMoney+"원]");
 			System.out.println();
 			System.out.println("땀 흘려 벌어라 Enter입력 [종료 : q]");
 			String work="";
@@ -30,15 +34,14 @@ public class Game_Work {
 			if(work.equals("q")) {
 				System.out.println("게임종료");
 				//TODO 돈 계산
-				CharacterService chaService = CharacterService.getInstance();
-				int updateMoney = chaService.updateCharacter(money, make.getName());
+				int updateMoney = chaService.updateCharacter(gotMoney, make.getName());
 				if(updateMoney > 0) {
 					System.out.println("돈정보 업데이트 성공");
 				}
 				return false;
 			}
 			if(work.isEmpty()) {
-				money++;
+				gotMoney++;
 			}
 		}
 	}

@@ -23,8 +23,8 @@ public class Game_Graph {
 			}
 		}
 		// 업데이트소지금액 가져오기, 변수에 저장
-		
-		int gotMoney = make.getMoney();
+		CharacterService chaService = CharacterService.getInstance();
+		int gotMoney = chaService.getMoney(make.getName()).getMoney();
 		while(1<2) {
 			
 			System.out.println("스탑게임 하시겠습니까?");
@@ -47,8 +47,6 @@ public class Game_Graph {
 				}
 				int betMoney = 0;
 				Game_Graph_Thread threadG = new Game_Graph_Thread();
-				System.out.println(Game_Graph_Thread.getGameStop());
-				System.out.println(Game_Graph_Thread.getThreadStop());
 				while(true) {
 					System.out.println("소지금액 : " + gotMoney);
 					System.out.print("배팅금액 입력 : ");
@@ -79,7 +77,7 @@ public class Game_Graph {
 						e.printStackTrace();
 					}
 					if(isEnter.length() == 0) {
-						String blank = sc.nextLine();
+//						String blank = sc.nextLine();
 						Game_Graph_Thread.setThreadStop(false);
 						try {
 							Game_Graph_Thread.sleep(500);
@@ -98,7 +96,6 @@ public class Game_Graph {
 			}else if(command == 2){
 				System.out.println("게임을 종료합니다.");
 				// gotmoney DB 소지금액에 업데이트
-				CharacterService chaService = CharacterService.getInstance();
 				int updateMoney = chaService.updateCharacter(gotMoney, make.getName());
 				if(updateMoney > 0) {
 					System.out.println("돈정보 업데이트 성공");
