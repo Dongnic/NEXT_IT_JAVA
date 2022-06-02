@@ -27,7 +27,7 @@ public class Q03_거꾸로트리 {
 			for(int j = 1; j <= countStar; j++) {
 				System.out.print("*");
 			}
-			blank += " ";
+			blank += " "; 
 			System.out.println(blank);
 			countStar = countStar - 2;
 		}	
