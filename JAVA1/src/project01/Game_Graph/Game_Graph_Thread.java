@@ -44,7 +44,7 @@ public class Game_Graph_Thread extends Thread {
 				gameStop = false;
 				threadStop = false;
 			}
-		} // while문 종료
+		} //  while문 종료
 		System.out.println("끝남");
 	}
 

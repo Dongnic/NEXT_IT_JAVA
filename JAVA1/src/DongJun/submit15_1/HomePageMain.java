@@ -28,6 +28,7 @@ public class HomePageMain {
 			} catch (NumberFormatException e) {
 				System.out.println("숫자를 입력해주세요.");
 				continue;
+				
 			}
 			
 			if(cmd == 1) {
